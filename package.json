@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "db:migrate": "prisma migrate dev --name dev",
+    "db:push": "prisma db push",
+    "db:studio": "prisma studio"
   },
   "prisma": {
     "schema": "src/prisma/schema.prisma"
