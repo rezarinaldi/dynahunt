@@ -9,6 +9,51 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
-  url      = env("DATABASE_URL")
+  provider  = "postgresql"
+  url  	    = env("DATABASE_URL")
+}
+
+model User{
+  id String @id @default(cuid())
+  name String
+  email String
+  password String
+  phone_number String?
+  bio String?
+  rate Decimal?
+  haveSosmed Boolean @default(false)
+
+  sosmed_id String @unique
+  sosmed Sosmed @relation(fields: [sosmed_id], references: [id])
+
+  interest Interest[]
+  category Category[]
+}
+
+model Sosmed{
+  id String @id @default(cuid())
+  photo String
+  username String
+  sample_content String[]
+
+  user User?
+}
+
+model Category{
+  id String @id @default(cuid())
+  name String
+
+  user_id String
+  user User @relation(fields: [user_id], references: [id])
+}
+
+model Interest{
+  id String @id @default(cuid())
+  name String
+  email String
+  phone_number String
+  desc_campaign String
+
+  user_id String
+  user User @relation(fields: [user_id], references: [id])
 }
