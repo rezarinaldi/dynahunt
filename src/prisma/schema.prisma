@@ -16,15 +16,15 @@ datasource db {
 model User{
   id String @id @default(cuid())
   name String
-  email String
+  email String @unique
   password String
   phone_number String?
   bio String?
   rate Decimal?
   haveSosmed Boolean @default(false)
 
-  sosmed_id String @unique
-  sosmed Sosmed @relation(fields: [sosmed_id], references: [id])
+  sosmed_id String? @unique
+  sosmed Sosmed? @relation(fields: [sosmed_id], references: [id])
 
   interest Interest[]
   category Category[]
