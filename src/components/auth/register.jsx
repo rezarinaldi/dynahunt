@@ -1,5 +1,6 @@
 "use client";
-import React, { useState } from "react";
+
+import { useState } from "react";
 
 export const Register = () => {
   const [registerData, setRegisterData] = useState({
@@ -51,13 +52,13 @@ export const Register = () => {
         <input
           type="email"
           name="email"
-          placeholder="email@domain.com"
+          placeholder="mail@yourmail.com"
           onChange={handleInputEvent}
         />
         <input
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password"
           onChange={handleInputEvent}
         />
       </div>
