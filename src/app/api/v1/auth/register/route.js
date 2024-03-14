@@ -1,13 +1,12 @@
 import { NextResponse } from "next/server";
-import jwt from "jsonwebtoken";
 import bcrypt from "bcrypt";
 import prisma from "@/prisma/utils";
 
 export async function POST(req) {
-  const { name, email, password } = await req.json();
+  const { name, email, password, phone_number } = await req.json();
 
   try {
-    const userExist = await prisma.user.findFirst({
+    const userExist = await prisma.user.findUnique({
       where: {
         email: email,
       },
@@ -23,6 +22,7 @@ export async function POST(req) {
       data: {
         name,
         email,
+        phone_number,
         password: hashedPassword,
       },
     });
