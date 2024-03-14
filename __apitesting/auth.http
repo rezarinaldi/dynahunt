@@ -7,3 +7,11 @@ POST http://localhost:3000/api/v1/auth/register
     "password": "testing3",
     "phone_number": "08123123123"
 }
+
+### Login Account
+POST http://localhost:3000/api/v1/auth/login
+
+{
+    "email": "testing1@gmail.com",
+    "password": "testing"
+}
