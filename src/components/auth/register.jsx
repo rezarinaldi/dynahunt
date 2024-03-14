@@ -4,6 +4,7 @@ import React, { useState } from "react";
 export const Register = () => {
   const [registerData, setRegisterData] = useState({
     nama: "",
+    phone_number: "",
     email: "",
     password: "",
   });
@@ -34,8 +35,13 @@ export const Register = () => {
       <div className="text-center">
         <h1>Register</h1>
       </div>
-      <div className="grid grid-cols-3 gap-4">
+      <div className="grid grid-cols-4 gap-4">
         <input name="name" placeholder="Name" onChange={handleInputEvent} />
+        <input
+          name="phone_number"
+          placeholder="Phone Number"
+          onChange={handleInputEvent}
+        />
         <input
           name="email"
           placeholder="email@domain.com"
