@@ -6,3 +6,11 @@ POST http://localhost:3000/api/v1/auth/register
     "email": "testing@gmail.com",
     "password": "testing"
 }
+
+### Login Account
+POST http://localhost:3000/api/v1/auth/login
+
+{
+    "email": "testing1@gmail.com",
+    "password": "testing"
+}
