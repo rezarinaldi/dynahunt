@@ -1,0 +1,8 @@
+### Register Account
+POST http://localhost:3000/api/v1/auth/register
+
+{
+    "name" : "testing",
+    "email": "testing@gmail.com",
+    "password": "testing"
+}
