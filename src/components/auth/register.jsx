@@ -1,10 +1,11 @@
 "use client";
-import React, { useState } from "react";
+
+import { useState } from "react";
 
 export const Register = () => {
   const [registerData, setRegisterData] = useState({
     nama: "",
-    phone_number: "",
+    phone_number: 0,
     email: "",
     password: "",
   });
@@ -14,9 +15,9 @@ export const Register = () => {
   }
 
   async function handleRegister() {
-    const { name, email, password } = registerData;
+    const { name, phone_number, email, password } = registerData;
 
-    if (!name || !email || !password) {
+    if (!name || !phone_number || !email || !password) {
       console.log("All fields must be filled");
       return;
     }
@@ -36,20 +37,28 @@ export const Register = () => {
         <h1>Register</h1>
       </div>
       <div className="grid grid-cols-4 gap-4">
-        <input name="name" placeholder="Name" onChange={handleInputEvent} />
         <input
+          type="name"
+          name="name"
+          placeholder="Name"
+          onChange={handleInputEvent}
+        />
+        <input
+          type="number"
           name="phone_number"
           placeholder="Phone Number"
           onChange={handleInputEvent}
         />
         <input
+          type="email"
           name="email"
-          placeholder="email@domain.com"
+          placeholder="mail@yourmail.com"
           onChange={handleInputEvent}
         />
         <input
+          type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password"
           onChange={handleInputEvent}
         />
       </div>
