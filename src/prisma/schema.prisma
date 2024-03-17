@@ -43,8 +43,8 @@ model Category{
   id String @id @default(cuid())
   name String
 
-  user_id String
-  user User @relation(fields: [user_id], references: [id])
+  user_id String?
+  user User? @relation(fields: [user_id], references: [id])
 }
 
 model Interest{
