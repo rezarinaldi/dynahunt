@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import prisma from "@/prisma/utils";
+import { uploadFile } from "@/lib/uploadFile";
 
 export async function GET(_, { params }) {
   const { influencer_id } = await params;
@@ -46,9 +47,47 @@ export async function DELETE(_, { params }) {
 }
 
 export async function PUT(req, { params }) {
+  const formData = await req.formData();
+  const image = formData.get("image");
   const { influencer_id } = await params;
-  const { username, follower, bio, rate } = await req.json();
+  const { username, follower, bio, rate, link1, link2, link3 } =
+    await req.json();
 
   try {
-  } catch (error) {}
+    await uploadFile({
+      Body: image,
+      ContentType: image.type,
+      Key: image.name,
+      Dir: influencer_id,
+    });
+
+    const influencer = await prisma.user.update({
+      where: {
+        id: influencer_id,
+      },
+      data: {
+        bio,
+        rate,
+        sosmed: {
+          create: {
+            photo: image.name,
+            username,
+            follower,
+            sample_content: [link1, link2, link3],
+          },
+        },
+        haveSosmed: true,
+      },
+    });
+
+    return NextResponse.json({
+      message: "Success udpate a influencer!",
+      data: influencer,
+    });
+  } catch (error) {
+    return NextResponse.json({
+      message: "Something wrong, please try again later",
+      detail: error.message,
+    });
+  }
 }

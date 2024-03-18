@@ -33,6 +33,7 @@ model User{
 model Sosmed{
   id String @id @default(cuid())
   photo String
+  follower String
   username String
   sample_content String[]
 
