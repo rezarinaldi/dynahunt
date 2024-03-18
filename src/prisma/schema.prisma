@@ -52,6 +52,7 @@ model Interest{
   name String
   email String
   phone_number String
+  title_campaign String
   desc_campaign String
 
   user_id String

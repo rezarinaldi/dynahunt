@@ -9,6 +9,10 @@ export async function GET(_, { params }) {
       where: {
         id: influencer_id,
       },
+      include: {
+        sosmed: true,
+        category: true,
+      },
     });
     return NextResponse.json({
       message: "Retrive a influencer!",
@@ -39,4 +43,12 @@ export async function DELETE(_, { params }) {
       detail: error.message,
     });
   }
+}
+
+export async function PUT(req, { params }) {
+  const { influencer_id } = await params;
+  const { username, follower, bio, rate } = await req.json();
+
+  try {
+  } catch (error) {}
 }
