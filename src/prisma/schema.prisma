@@ -20,6 +20,8 @@ model User{
   password String
   phone_number String?
   bio String?
+  location String?
+  category String?
   rate Decimal?
   haveSosmed Boolean @default(false)
 
@@ -27,7 +29,6 @@ model User{
   sosmed Sosmed? @relation(fields: [sosmed_id], references: [id])
 
   interest Interest[]
-  category Category[]
 }
 
 model Sosmed{
@@ -38,14 +39,6 @@ model Sosmed{
   sample_content String[]
 
   user User?
-}
-
-model Category{
-  id String @id @default(cuid())
-  name String
-
-  user_id String?
-  user User? @relation(fields: [user_id], references: [id])
 }
 
 model Interest{

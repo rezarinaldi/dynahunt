@@ -4,66 +4,66 @@ import prisma from "@/prisma/utils";
 export async function GET(req) {
   const searchParams = req.nextUrl.searchParams;
   const category = await searchParams.get("category");
-  const min_rate = await searchParams.get("min_rate");
-  const max_rate = await searchParams.get("max_rate");
+  const rate = await searchParams.get("rate");
+  const follower = await searchParams.get("follower");
   const q = await searchParams.get("q");
   try {
-    if (min_rate && max_rate && category) {
-      const influencer = await prisma.user.findMany({
-        where: {
-          category: {
-            some: {
-              name: category,
+    if (rate) {
+      let influencer = null;
+      if (rate == "lowest") {
+        influencer = await prisma.user.findMany({
+          where: {
+            haveSosmed: true,
+          },
+          orderBy: {
+            rate: "asc",
+          },
+        });
+      } else {
+        influencer = await prisma.user.findMany({
+          where: {
+            haveSosmed: true,
+          },
+          orderBy: {
+            rate: "desc",
+          },
+        });
+      }
+      return NextResponse.json({
+        message: "Retrive all influencer!",
+        data: influencer,
+      });
+    } else if (follower) {
+      let influencer = null;
+      if (follower == "lowest") {
+        influencer = await prisma.user.findMany({
+          where: {
+            haveSosmed: true,
+          },
+          orderBy: {
+            sosmed: {
+              follower: "asc",
             },
           },
-          rate: {
-            lte: max_rate,
-            gte: min_rate,
+          include: {
+            sosmed: true,
           },
-        },
-      });
-
-      return NextResponse.json({
-        message: "Retrive all influencer!",
-        data: influencer,
-      });
-    }
-    if (min_rate && max_rate) {
-      const influencer = await prisma.user.findMany({
-        where: {
-          rate: {
-            lte: max_rate,
-            gte: min_rate,
+        });
+      } else {
+        influencer = await prisma.user.findMany({
+          where: {
+            haveSosmed: true,
           },
-        },
-      });
-
-      return NextResponse.json({
-        message: "Retrive all influencer!",
-        data: influencer,
-      });
-    } else if (max_rate) {
-      const influencer = await prisma.user.findMany({
-        where: {
-          rate: {
-            lte: max_rate,
+          orderBy: {
+            sosmed: {
+              follower: "desc",
+            },
           },
-        },
-      });
-
-      return NextResponse.json({
-        message: "Retrive all influencer!",
-        data: influencer,
-      });
-    } else if (min_rate) {
-      const influencer = await prisma.user.findMany({
-        where: {
-          rate: {
-            gte: min_rate,
+          include: {
+            sosmed: true,
           },
-        },
-      });
-
+        });
+      }
       return NextResponse.json({
         message: "Retrive all influencer!",
         data: influencer,
@@ -72,9 +72,8 @@ export async function GET(req) {
       const influencer = await prisma.user.findMany({
         where: {
           category: {
-            some: {
-              name: category,
-            },
+            contains: category,
+            mode: "insensitive",
           },
         },
       });

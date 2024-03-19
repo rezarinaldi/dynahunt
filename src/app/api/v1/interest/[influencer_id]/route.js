@@ -33,7 +33,7 @@ export async function POST(req, { params }) {
   }
 }
 
-export async function GET(req, { params }) {
+export async function GET(_, { params }) {
   const { influencer_id } = await params;
 
   try {
