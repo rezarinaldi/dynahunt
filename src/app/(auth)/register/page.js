@@ -1,4 +1,4 @@
-import { Register } from "@/components/auth/register";
+import { Register } from "@/components/auth/Register";
 
 export const metadata = {
   title: "Register | DynaHunt",

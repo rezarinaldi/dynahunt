@@ -42,7 +42,7 @@ export const Register = () => {
               <Link href={"/"}>
                 <div className="flex items-center lg:items-start">
                   <Image
-                    src={"/icon.png"}
+                    src={"/img/dh.svg"}
                     width={25}
                     height={25}
                     alt={"logo"}
@@ -118,7 +118,12 @@ export const Register = () => {
           </div>
           <div className="w-2/5 bg-purple-500 text-white rounded-tr-2xl rounded-br-2xl py-36 px-12 hidden lg:block">
             <Link href={"/"} className="flex justify-center items-center">
-              <Image src={"/icon.png"} width={40} height={40} alt={"logo"} />
+              <Image
+                src={"/img/dh-white.svg"}
+                width={40}
+                height={40}
+                alt={"logo"}
+              />
             </Link>
             <div className="border-2 w-10 border-white inline-block mb-2"></div>
             <p className="mb-10">

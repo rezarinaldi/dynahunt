@@ -5,10 +5,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   description:
-    "Find & Hire Influencer to Create Unique Content for Your Agency or Brand",
+    "Find & Hire Influencer to Create Unique Content for Your Company or Brand",
   authors: ["Dynacode"],
   icons: {
-    icon: "/icon.png",
+    icon: "/img/dh.svg",
   },
 };
 
