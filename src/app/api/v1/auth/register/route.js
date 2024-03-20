@@ -35,6 +35,7 @@ export async function POST(req) {
   } catch (error) {
     return NextResponse.json({
       message: "Something wrong, please try again later",
+      detail: error.message,
     });
   }
 }
