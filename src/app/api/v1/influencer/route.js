@@ -97,7 +97,11 @@ export async function GET(req) {
       });
     }
 
-    const influencer = await prisma.user.findMany();
+    const influencer = await prisma.user.findMany({
+      where: {
+        haveSosmed: true,
+      },
+    });
     return NextResponse.json({
       message: "Retrive all influencer!",
       data: influencer,
