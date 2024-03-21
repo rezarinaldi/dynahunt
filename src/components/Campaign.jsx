@@ -13,12 +13,6 @@ export const Campaign = () => {
             href="#"
             className="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8"
           >
-            <img src="/img/campaign/indosiar.png" alt="Indosiar" />
-          </a>
-          <a
-            href="#"
-            className="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8"
-          >
             <img src="/img/campaign/trans7.png" alt="Trans 7" />
           </a>
           <a
@@ -31,19 +25,25 @@ export const Campaign = () => {
             href="#"
             className="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8"
           >
-            <img src="/img/campaign/mnctv.png" alt="MNC TV" />
-          </a>
-          <a
-            href="#"
-            className="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8"
-          >
-            <img src="/img/campaign/metrotv.png" alt="Metro TV" />
-          </a>
-          <a
-            href="#"
-            className="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8"
-          >
             <img src="/img/campaign/antv.png" alt="ANTV" />
+          </a>
+          <a
+            href="#"
+            className="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8"
+          >
+            <img src="/img/campaign/yamaha.png" alt="Yamaha" />
+          </a>
+          <a
+            href="#"
+            className="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8"
+          >
+            <img src="/img/campaign/gojek.svg" alt="Gojek" />
+          </a>
+          <a
+            href="#"
+            className="mx-4 max-w-[120px] py-4 opacity-60 grayscale transition duration-500 hover:opacity-100 hover:grayscale-0 lg:mx-6 xl:mx-8"
+          >
+            <img src="/img/campaign/tokopedia.png" alt="Tokopedia" />
           </a>
         </div>
       </div>
