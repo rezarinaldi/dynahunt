@@ -40,6 +40,7 @@ export const Login = () => {
     localStorage.setItem("user", JSON.stringify(data));
     toast.success(message);
     router.push("/influencer");
+    router.refresh();
   }
 
   return (
