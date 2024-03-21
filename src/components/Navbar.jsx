@@ -60,7 +60,7 @@ export const Navbar = ({ userData }) => {
                   <summary className="links">{userData?.name}</summary>
                   <ul className="p-2 bg-base-100 rounded-t-none">
                     <li>
-                      <Link href="/influencer/profile" className="links">
+                      <Link href="/influencer" className="links">
                         Profile
                       </Link>
                     </li>
@@ -121,7 +121,7 @@ export const Navbar = ({ userData }) => {
                 <summary className="links">{userData?.name}</summary>
                 <ul className="p-2 bg-base-100 rounded-t-none">
                   <li>
-                    <Link href="/influencer/profile" className="links">
+                    <Link href="/influencer" className="links">
                       Profile
                     </Link>
                   </li>
