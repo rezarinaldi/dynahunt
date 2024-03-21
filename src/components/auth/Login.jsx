@@ -3,8 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 export const Login = () => {
+  const router = useRouter();
   const [loginData, setLoginDate] = useState({
     email: "",
     password: "",
@@ -18,7 +21,7 @@ export const Login = () => {
     const { email, password } = loginData;
 
     if (!email || !password) {
-      console.log("All field must be filled");
+      toast.error("All fields must be filled!");
       return;
     }
 
@@ -26,8 +29,17 @@ export const Login = () => {
       method: "POST",
       body: JSON.stringify(loginData),
     });
-    const data = await res.json();
-    console.log(data);
+
+    if (res.status === 401 || res.status === 404) {
+      const { message } = await res.json();
+      toast.error(message);
+      return;
+    }
+
+    const { data, message } = await res.json();
+    localStorage.setItem("user", JSON.stringify(data));
+    toast.success(message);
+    router.push("/influencer");
   }
 
   return (

@@ -36,7 +36,7 @@ export async function POST(req) {
       expiresIn: "30d",
     });
     const res = NextResponse.json(
-      { message: "Login succesfully!", data: payload },
+      { message: "Log in succesfully!", data: payload },
       { status: 200 }
     );
     res.cookies.set("token", token);
