@@ -6,9 +6,6 @@ export const InfluencerItem = () => {
       id="influencer"
       className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8"
     >
-      <h2 className="text-4xl text-center lg:text-left font-bold tracking-tight">
-        Influencers
-      </h2>
       <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         <div className="group relative">
           <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden lg:aspect-none group-hover:opacity-75 lg:h-80">

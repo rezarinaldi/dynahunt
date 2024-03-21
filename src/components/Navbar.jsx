@@ -46,7 +46,12 @@ export const Navbar = ({ userData }) => {
             </li>
             <li>
               <Link href={`/#influencer`} className="links">
-                Explore
+                Explore Influencers
+              </Link>
+            </li>
+            <li>
+              <Link href={`/#campaign`} className="links">
+                Campaigns
               </Link>
             </li>
             {userData ? (
@@ -98,7 +103,12 @@ export const Navbar = ({ userData }) => {
           </li>
           <li>
             <Link href={`/#influencer`} className="links">
-              Explore
+              Explore Influencers
+            </Link>
+          </li>
+          <li>
+            <Link href={`/#campaign`} className="links">
+              Campaigns
             </Link>
           </li>
         </ul>
