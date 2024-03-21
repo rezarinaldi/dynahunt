@@ -51,8 +51,8 @@ export const Navbar = () => {
                 <summary className="links">Testing Kak</summary>
                 <ul className="p-2 bg-base-100 rounded-t-none">
                   <li>
-                    <Link href="/dashboard" className="links">
-                      Dashboard
+                    <Link href="/profile" className="links">
+                      Profile
                     </Link>
                   </li>
                   <li>
@@ -67,7 +67,7 @@ export const Navbar = () => {
         </div>
 
         <Link href="/" className="btn btn-ghost text-xl">
-          <Image src={"/icon.png"} width={40} height={40} alt={"logo"} />{" "}
+          <Image src={"img/dh.svg"} width={40} height={40} alt={"logo"} />{" "}
           DynaHunt
         </Link>
       </div>
@@ -90,7 +90,7 @@ export const Navbar = () => {
           <li>
             <Link
               href={`/login`}
-              className="links bg-neutral text-white hover:bg-base-200 hover:text-neutral"
+              className="links bg-[#FCE72D] hover:bg-purple-700 hover:text-white"
             >
               Log In
             </Link>
@@ -105,8 +105,8 @@ export const Navbar = () => {
               <summary className="links">Testing Kak</summary>
               <ul className="p-2 bg-base-100 rounded-t-none">
                 <li>
-                  <Link href="/dashboard" className="links">
-                    Dashboard
+                  <Link href="/profile" className="links">
+                    Profile
                   </Link>
                 </li>
                 <li>

@@ -1,5 +1,6 @@
 export const metadata = {
-  title: "Home | DynaHunt",
+  title:
+    "DynaHunt | Find & Hire Influencer to Create Unique Content for Your Company or Brand",
 };
 
 export default function LandingLayout({ children }) {
