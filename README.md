@@ -1,39 +1,34 @@
 # 👓 DynaHunt
 
-### Environment Variables
-
-- DATABASE_URL
-- AWSS3_ACCESS_KEY
-- AWSS3_SECRET_KEY
-- JWT_SECRET
-
 ### How to use it:
 
 1. Clone this repo or use as template
 
 ```
 git clone git@github.com:rezarinaldi/dynahunt.git
+or
+git clone https://github.com/rezarinaldi/dynahunt.git
 ```
 
-2. Install dependencies
+2. Go to the project folder
 
 ```bash
-npm install
+cd dynahunt
 ```
 
-3. Create .env file and add environment variables
+3. Install packages
+
+```bash
+npm i
+```
+
+4. Copy the `.env.example` to `.env`
 
 ```bash
 cp .env.example .env
 ```
 
-4. Do prisma migration
-
-```bash
-npm run db:migrate
-```
-
-5. Run the development server:
+5. Run the app locally
 
 ```bash
 npm run dev

@@ -4,17 +4,17 @@ import "@/styles/globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "DynaHunt",
-  description: "The React Framework for the Web",
+  description:
+    "Find & Hire Influencer to Create Unique Content for Your Company or Brand",
   authors: ["Dynacode"],
   icons: {
-    icon: "/icon.png",
+    icon: "/img/dh.svg",
   },
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html lang="en" className="scroll-smooth">
       <body className={inter.className}>{children}</body>
     </html>
   );

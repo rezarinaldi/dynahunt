@@ -4,6 +4,12 @@
 
 @layer base {
   body {
-    @apply bg-base-300 min-h-dvh p-4;
+    @apply min-h-dvh;
+  }
+}
+
+@layer components {
+  .links {
+    @apply font-semibold text-[16px] hover:text-neutral hover:bg-[#FCE72D];
   }
 }
