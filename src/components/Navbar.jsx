@@ -4,14 +4,15 @@ import Image from "next/image";
 import Link from "next/link";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
+import Toast from "@/lib/toast";
 
 export const Navbar = ({ userData }) => {
   const router = useRouter();
+  const { toastSuccess } = Toast();
   function logout() {
     localStorage.removeItem("user");
     Cookies.remove("token");
-    toast.success("Log out succesfully!");
+    toastSuccess("Log out succesfully!");
     router.push("/login");
   }
 

@@ -8,12 +8,13 @@ import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
 import Cookies from "js-cookie";
-import toast from "react-hot-toast";
+import Toast from "@/lib/toast";
 
 export const Sidebar = () => {
   const pathname = usePathname();
   const router = useRouter();
   const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const { toastSuccess } = Toast();
 
   useEffect(() => {
     const sidebar = document.getElementById("sidebar");
@@ -31,7 +32,7 @@ export const Sidebar = () => {
   function logout() {
     localStorage.removeItem("user");
     Cookies.remove("token");
-    toast.success("Log out successfully!");
+    toastSuccess("Log out successfully!");
     router.push("/login");
   }
 

@@ -4,10 +4,11 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
+import Toast from "@/lib/toast";
 
 export const Register = () => {
   const router = useRouter();
+  const { toastSuccess, toastError } = Toast();
   const [registerData, setRegisterData] = useState({
     nama: "",
     phone_number: 0,
@@ -23,7 +24,7 @@ export const Register = () => {
     const { name, phone_number, email, password } = registerData;
 
     if (!name || !phone_number || !email || !password) {
-      toast.error("All fields must be filled!");
+      toastError("All fields must be filled!");
       return;
     }
 
@@ -34,12 +35,12 @@ export const Register = () => {
 
     if (res.status === 400 || res.status === 401) {
       const { message } = await res.json();
-      toast.error(message);
+      toastError(message);
       return;
     }
 
     const { message } = await res.json();
-    toast.success(message);
+    toastSuccess(message);
     router.push("/login");
   }
 
