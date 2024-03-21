@@ -1,7 +1,20 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import Cookies from "js-cookie";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
-export const Navbar = () => {
+export const Navbar = ({ userData }) => {
+  const router = useRouter();
+  function logout() {
+    localStorage.removeItem("user");
+    Cookies.remove("token");
+    toast.success("Log out succesfully!");
+    router.push("/login");
+  }
+
   return (
     <div className="navbar p-4 backdrop-blur-2xl bg-base-100 sticky top-0 left-0 z-20">
       <div className="navbar-start">
@@ -36,33 +49,38 @@ export const Navbar = () => {
                 Explore
               </Link>
             </li>
-            <li>
-              <Link href={`/login`} className="links">
-                Log In
-              </Link>
-            </li>
-            <li>
-              <Link href={`/register`} className="links">
-                Register
-              </Link>
-            </li>
-            <li>
-              <details>
-                <summary className="links">Testing Kak</summary>
-                <ul className="p-2 bg-base-100 rounded-t-none">
-                  <li>
-                    <Link href="/profile" className="links">
-                      Profile
-                    </Link>
-                  </li>
-                  <li>
-                    <button onClick={""} className="links">
-                      Log Out
-                    </button>
-                  </li>
-                </ul>
-              </details>
-            </li>
+            {userData ? (
+              <li>
+                <details>
+                  <summary className="links">{userData?.name}</summary>
+                  <ul className="p-2 bg-base-100 rounded-t-none">
+                    <li>
+                      <Link href="/influencer/profile" className="links">
+                        Profile
+                      </Link>
+                    </li>
+                    <li>
+                      <button onClick={logout} className="links">
+                        Log Out
+                      </button>
+                    </li>
+                  </ul>
+                </details>
+              </li>
+            ) : (
+              <>
+                <li>
+                  <Link href={`/login`} className="links">
+                    Log In
+                  </Link>
+                </li>
+                <li>
+                  <Link href={`/register`} className="links">
+                    Register
+                  </Link>
+                </li>
+              </>
+            )}
           </ul>
         </div>
 
@@ -87,36 +105,41 @@ export const Navbar = () => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-2">
-          <li>
-            <Link
-              href={`/login`}
-              className="links bg-[#FCE72D] hover:bg-purple-700 hover:text-white"
-            >
-              Log In
-            </Link>
-          </li>
-          <li>
-            <Link href={`/register`} className="links">
-              Register
-            </Link>
-          </li>
-          <li>
-            <details>
-              <summary className="links">Testing Kak</summary>
-              <ul className="p-2 bg-base-100 rounded-t-none">
-                <li>
-                  <Link href="/profile" className="links">
-                    Profile
-                  </Link>
-                </li>
-                <li>
-                  <button onClick={""} className="links">
-                    Log Out
-                  </button>
-                </li>
-              </ul>
-            </details>
-          </li>
+          {userData ? (
+            <li>
+              <details>
+                <summary className="links">{userData?.name}</summary>
+                <ul className="p-2 bg-base-100 rounded-t-none">
+                  <li>
+                    <Link href="/influencer/profile" className="links">
+                      Profile
+                    </Link>
+                  </li>
+                  <li>
+                    <button onClick={logout} className="links">
+                      Log Out
+                    </button>
+                  </li>
+                </ul>
+              </details>
+            </li>
+          ) : (
+            <>
+              <li>
+                <Link
+                  href={`/login`}
+                  className="links bg-[#FCE72D] hover:bg-purple-700 hover:text-white"
+                >
+                  Log In
+                </Link>
+              </li>
+              <li>
+                <Link href={`/register`} className="links">
+                  Register
+                </Link>
+              </li>
+            </>
+          )}
         </ul>
       </div>
     </div>

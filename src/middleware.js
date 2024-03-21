@@ -10,15 +10,15 @@ export default async function middleware(req) {
     const encodedJwtSecret = new TextEncoder().encode(jwtSecret);
     const token = req.cookies.get("token")?.value;
 
-    if (!token && path.startsWith("/profile")) {
+    if (!token && path.startsWith("/influencer")) {
       return NextResponse.redirect(new URL("/login", req.url));
     } else if (
       token &&
       (path.startsWith("/login") || path.startsWith("/register"))
     ) {
       await jose.jwtVerify(token, encodedJwtSecret);
-      return NextResponse.redirect(new URL("/profile", req.url));
-    } else if (token && path.startsWith("/profile")) {
+      return NextResponse.redirect(new URL("/influencer", req.url));
+    } else if (token && path.startsWith("/influencer")) {
       await jose.jwtVerify(token, encodedJwtSecret);
       return NextResponse.next();
     }
@@ -28,5 +28,5 @@ export default async function middleware(req) {
 }
 
 export const config = {
-  matcher: ["/profile/:path*", "/login", "/register"],
+  matcher: ["/influencer/:path*", "/login", "/register"],
 };
