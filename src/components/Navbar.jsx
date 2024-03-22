@@ -5,10 +5,18 @@ import Link from "next/link";
 import Cookies from "js-cookie";
 import { useRouter } from "next/navigation";
 import Toast from "@/lib/toast";
+import { useState, useEffect } from "react";
 
-export const Navbar = ({ userData }) => {
+export const Navbar = () => {
+  const [user, setUser] = useState("");
   const router = useRouter();
   const { toastSuccess } = Toast();
+
+  useEffect(() => {
+    const localUser = JSON.parse(localStorage.getItem("user"));
+    setUser(localUser);
+  }, []);
+
   function logout() {
     localStorage.removeItem("user");
     Cookies.remove("token");
@@ -55,10 +63,10 @@ export const Navbar = ({ userData }) => {
                 Campaigns
               </Link>
             </li>
-            {userData ? (
+            {user ? (
               <li>
                 <details>
-                  <summary className="links">{userData?.name}</summary>
+                  <summary className="links">{user?.name}</summary>
                   <ul className="p-2 bg-base-100 rounded-t-none">
                     <li>
                       <Link href="/influencer" className="links">
@@ -116,10 +124,10 @@ export const Navbar = ({ userData }) => {
       </div>
       <div className="navbar-end hidden lg:flex">
         <ul className="menu menu-horizontal px-1 gap-2">
-          {userData ? (
+          {user ? (
             <li>
               <details>
-                <summary className="links">{userData?.name}</summary>
+                <summary className="links">{user?.name}</summary>
                 <ul className="p-2 bg-base-100 rounded-t-none">
                   <li>
                     <Link href="/influencer" className="links">

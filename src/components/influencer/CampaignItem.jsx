@@ -6,8 +6,8 @@ export const CampaignItem = () => {
           <h2 className="card-title overflow-hidden text-ellipsis">Test 123</h2>
           <p>test@domain.com</p>
           <p>08123456789</p>
-          <p>Bandung</p>
           <h2 className="card-title mt-3">Campaign Description:</h2>
+          <p className="font-semibold">Inviting for Collab</p>
           <p>Test aja sih gan.</p>
         </div>
       </div>
@@ -17,8 +17,8 @@ export const CampaignItem = () => {
           <h2 className="card-title overflow-hidden text-ellipsis">Test 123</h2>
           <p>test@domain.com</p>
           <p>08123456789</p>
-          <p>Bandung</p>
           <h2 className="card-title mt-3">Campaign Description:</h2>
+          <p className="font-semibold">Inviting for Collab</p>
           <p>Test aja sih gan.</p>
         </div>
       </div>
@@ -28,8 +28,8 @@ export const CampaignItem = () => {
           <h2 className="card-title overflow-hidden text-ellipsis">Test 123</h2>
           <p>test@domain.com</p>
           <p>08123456789</p>
-          <p>Bandung</p>
           <h2 className="card-title mt-3">Campaign Description:</h2>
+          <p className="font-semibold">Inviting for Collab</p>
           <p>Test aja sih gan.</p>
         </div>
       </div>
