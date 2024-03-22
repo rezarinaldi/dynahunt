@@ -100,9 +100,9 @@ export const Sidebar = () => {
         </div>
         <button
           onClick={logout}
-          className="btn text-neutral border-none btn-sm mt-auto hover:bg-[#FCE72D]"
+          className="btn bg-[#FCE72D] text-neutral border-none btn-sm mt-auto"
         >
-          Log out
+          Log Out
         </button>
       </div>
     </aside>
