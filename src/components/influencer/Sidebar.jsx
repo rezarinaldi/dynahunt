@@ -4,6 +4,7 @@ import { useContext, useEffect } from "react";
 import { SidebarContext } from "@/app/influencer/layout";
 import { FaListAlt } from "react-icons/fa";
 import { GoPeople } from "react-icons/go";
+import { TbBuilding } from "react-icons/tb";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname, useRouter } from "next/navigation";
@@ -85,15 +86,15 @@ export const Sidebar = () => {
               <p className="text-sm">Management Profile</p>
             </div>
           </Link>
-          <Link href="/influencer/offered">
+          <Link href="/influencer/offer">
             <div
               className={`flex items-center gap-3 px-3 py-2 rounded-md transition delay-100 ease-in ${
-                pathname === "/influencer/offered"
+                pathname === "/influencer/offer"
                   ? "bg-base-200 text-neutral"
                   : "text-white hover:bg-base-200 hover:text-neutral"
               }`}
             >
-              <FaListAlt />
+              <TbBuilding />
               <p className="text-sm">Offered Campaigns</p>
             </div>
           </Link>
