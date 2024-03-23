@@ -18,7 +18,7 @@ export const Profile = () => {
         Welcome Back, {user?.name} 👋
       </h2>
       <ProfileItem />
-      <h2 className="text-2xl font-semibold text-neutral lg:text-left text-center my-3">
+      <h2 className="text-2xl font-semibold text-neutral my-3">
         Sample Content
       </h2>
       <EmbedItem />

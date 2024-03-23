@@ -9,13 +9,17 @@ export const ProfileItem = () => {
         <p className="text-sm lg:text-md">Followers</p>
       </div>
       <div className="flex justify-center">
-        <Image
-          src={"/img/zayn.jpeg"}
-          alt="profil"
-          width={200}
-          height={200}
-          className="my-2"
-        />
+        <div className="avatar">
+          <div className="w-48 rounded-full">
+            <Image
+              src={"/img/campaign/zayn.jpeg"}
+              alt="profil"
+              width={200}
+              height={200}
+              className="my-2"
+            />
+          </div>
+        </div>
       </div>
       <p className="text-md lg:text-sm font-semibold">Fashion</p>
       <p className="text-md lg:text-sm my-2">

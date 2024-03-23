@@ -2,144 +2,111 @@ import Image from "next/image";
 
 export const InfluencerItem = () => {
   return (
-    <div
-      id="influencer"
-      className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8"
-    >
-      <div className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
-        <div className="group relative">
-          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden lg:aspect-none group-hover:opacity-75 lg:h-80">
-            <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt="Photo Influencer"
-              className="h-full w-full rounded-full object-cover object-center lg:h-full lg:w-full"
-            />
-          </div>
-          <div className="flex justify-center mt-3">
-            <h1 className="text-2xl font-semibold flex justify-between">
-              <Image
-                src={"/img/instagram.svg"}
-                width={25}
-                height={25}
-                alt={"logo"}
-                className="mr-2"
-              />
-              @rezarinaldi
-            </h1>
-          </div>
-          <div className="mt-4 flex justify-between">
-            <div>
-              <h3 className="text-sm text-gray-700">
-                <a href="#">
-                  <span aria-hidden="true" className="absolute inset-0"></span>
-                  📍 Malang
-                </a>
-              </h3>
-              <p className="mt-1 text-sm text-gray-500">Programming</p>
-            </div>
-            <p className="text-sm font-medium text-gray-900">350 Followers</p>
+    <>
+      <div className="card card-compact w-full bg-base-100 shadow-sm hover:shadow-md lg:hover:shadow-xl transition-all">
+        <div className="avatar flex justify-center">
+          <div className="w-24 rounded-full">
+            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
           </div>
         </div>
-        <div className="group relative">
-          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden lg:aspect-none group-hover:opacity-75 lg:h-80">
-            <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt="Photo Influencer"
-              className="h-full w-full rounded-full object-cover object-center lg:h-full lg:w-full"
+        <div className="card-body">
+          <h2 className="card-title flex justify-center">
+            <Image
+              src={"/img/instagram.svg"}
+              width={25}
+              height={25}
+              alt={"logo"}
             />
+            @testsaja
+          </h2>
+          <div className="flex flex-col justify-between text-center font-semibold text-[16px] gap-2">
+            <p>Malang</p>
+            <p>350 Followers</p>
           </div>
-          <div className="flex justify-center mt-3">
-            <h1 className="text-2xl font-semibold flex justify-between">
-              <Image
-                src={"/img/instagram.svg"}
-                width={25}
-                height={25}
-                alt={"logo"}
-                className="mr-2"
-              />
-              @rezarinaldi
-            </h1>
-          </div>
-          <div className="mt-4 flex justify-between">
-            <div>
-              <h3 className="text-sm text-gray-700">
-                <a href="#">
-                  <span aria-hidden="true" className="absolute inset-0"></span>
-                  📍 Malang
-                </a>
-              </h3>
-              <p className="mt-1 text-sm text-gray-500">Programming</p>
-            </div>
-            <p className="text-sm font-medium text-gray-900">350 Followers</p>
-          </div>
-        </div>
-        <div className="group relative">
-          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden lg:aspect-none group-hover:opacity-75 lg:h-80">
-            <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt="Photo Influencer"
-              className="h-full w-full rounded-full object-cover object-center lg:h-full lg:w-full"
-            />
-          </div>
-          <div className="flex justify-center mt-3">
-            <h1 className="text-2xl font-semibold flex justify-between">
-              <Image
-                src={"/img/instagram.svg"}
-                width={25}
-                height={25}
-                alt={"logo"}
-                className="mr-2"
-              />
-              @rezarinaldi
-            </h1>
-          </div>
-          <div className="mt-4 flex justify-between">
-            <div>
-              <h3 className="text-sm text-gray-700">
-                <a href="#">
-                  <span aria-hidden="true" className="absolute inset-0"></span>
-                  📍 Malang
-                </a>
-              </h3>
-              <p className="mt-1 text-sm text-gray-500">Programming</p>
-            </div>
-            <p className="text-sm font-medium text-gray-900">350 Followers</p>
-          </div>
-        </div>
-        <div className="group relative">
-          <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden lg:aspect-none group-hover:opacity-75 lg:h-80">
-            <img
-              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-              alt="Photo Influencer"
-              className="h-full w-full rounded-full object-cover object-center lg:h-full lg:w-full"
-            />
-          </div>
-          <div className="flex justify-center mt-3">
-            <h1 className="text-2xl font-semibold flex justify-between">
-              <Image
-                src={"/img/instagram.svg"}
-                width={25}
-                height={25}
-                alt={"logo"}
-                className="mr-2"
-              />
-              @rezarinaldi
-            </h1>
-          </div>
-          <div className="mt-4 flex justify-between">
-            <div>
-              <h3 className="text-sm text-gray-700">
-                <a href="#">
-                  <span aria-hidden="true" className="absolute inset-0"></span>
-                  📍 Malang
-                </a>
-              </h3>
-              <p className="mt-1 text-sm text-gray-500">Programming</p>
-            </div>
-            <p className="text-sm font-medium text-gray-900">350 Followers</p>
+          <div className="card-actions flex justify-center mt-2">
+            <div className="badge badge-outline">Fashion</div>
+            <div className="badge badge-outline">Sport</div>
           </div>
         </div>
       </div>
-    </div>
+      <div className="card card-compact w-full bg-base-100 shadow-sm hover:shadow-md lg:hover:shadow-xl transition-all">
+        <div className="avatar flex justify-center">
+          <div className="w-24 rounded-full">
+            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          </div>
+        </div>
+        <div className="card-body">
+          <h2 className="card-title flex justify-center">
+            <Image
+              src={"/img/instagram.svg"}
+              width={25}
+              height={25}
+              alt={"logo"}
+            />
+            @testsaja
+          </h2>
+          <div className="flex flex-col justify-between text-center font-semibold text-[16px] gap-2">
+            <p>Malang</p>
+            <p>350 Followers</p>
+          </div>
+          <div className="card-actions flex justify-center mt-2">
+            <div className="badge badge-outline">Fashion</div>
+            <div className="badge badge-outline">Sport</div>
+          </div>
+        </div>
+      </div>
+      <div className="card card-compact w-full bg-base-100 shadow-sm hover:shadow-md lg:hover:shadow-xl transition-all">
+        <div className="avatar flex justify-center">
+          <div className="w-24 rounded-full">
+            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          </div>
+        </div>
+        <div className="card-body">
+          <h2 className="card-title flex justify-center">
+            <Image
+              src={"/img/instagram.svg"}
+              width={25}
+              height={25}
+              alt={"logo"}
+            />
+            @testsaja
+          </h2>
+          <div className="flex flex-col justify-between text-center font-semibold text-[16px] gap-2">
+            <p>Malang</p>
+            <p>350 Followers</p>
+          </div>
+          <div className="card-actions flex justify-center mt-2">
+            <div className="badge badge-outline">Fashion</div>
+            <div className="badge badge-outline">Sport</div>
+          </div>
+        </div>
+      </div>
+      <div className="card card-compact w-full bg-base-100 shadow-sm hover:shadow-md lg:hover:shadow-xl transition-all">
+        <div className="avatar flex justify-center">
+          <div className="w-24 rounded-full">
+            <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+          </div>
+        </div>
+        <div className="card-body">
+          <h2 className="card-title flex justify-center">
+            <Image
+              src={"/img/instagram.svg"}
+              width={25}
+              height={25}
+              alt={"logo"}
+            />
+            @testsaja
+          </h2>
+          <div className="flex flex-col justify-between text-center font-semibold text-[16px] gap-2">
+            <p>Malang</p>
+            <p>350 Followers</p>
+          </div>
+          <div className="card-actions flex justify-center mt-2">
+            <div className="badge badge-outline">Fashion</div>
+            <div className="badge badge-outline">Sport</div>
+          </div>
+        </div>
+      </div>
+    </>
   );
 };

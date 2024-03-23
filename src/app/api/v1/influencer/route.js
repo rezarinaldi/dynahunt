@@ -6,7 +6,24 @@ export async function GET(req) {
   const category = await searchParams.get("category");
   const rate = await searchParams.get("rate");
   const follower = await searchParams.get("follower");
+  const count = await searchParams.get("count");
   const q = await searchParams.get("q");
+
+  if (count === "true") {
+    try {
+      const totalAllInfluencer = await prisma.user.count();
+      return NextResponse.json(
+        { data: totalAllInfluencer, message: "Get data successfully" },
+        { status: 200 }
+      );
+    } catch (error) {
+      return NextResponse.json(
+        { data: null, message: "Get data failed" },
+        { status: 500 }
+      );
+    }
+  }
+
   try {
     if (rate) {
       let influencer = null;
