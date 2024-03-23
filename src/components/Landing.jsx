@@ -5,13 +5,13 @@ import { Hero } from "./Hero";
 import { Influencer } from "./Influencer";
 import { Navbar } from "./Navbar";
 
-export const Landing = ({ influencerData, totalInfluencer }) => {
+export const Landing = () => {
   return (
     <>
       <Navbar />
-      <Hero totalInfluencer={totalInfluencer} />
+      <Hero />
       <Filtering />
-      <Influencer influencerData={influencerData} />
+      <Influencer />
       <Campaign />
       <Footer />
     </>
