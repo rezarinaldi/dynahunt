@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export const Hero = () => {
+export const Hero = ({totalInfluencer}) => {
   return (
     <div className="hero min-h-screen bg-[#601FCE] text-neutral-content">
       <div className="hero-content text-center">
@@ -10,7 +10,7 @@ export const Hero = () => {
             Brand
           </h1>
           <p className="py-6">
-            Find and connect with over 100.000 influencer. <br />
+            Find and connect with over {totalInfluencer} influencer. <br />
             Start finding perfect influencers for your company or brand.
           </p>
           <Link href={"/register"}>
