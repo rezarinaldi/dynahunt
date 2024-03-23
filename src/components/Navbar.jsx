@@ -13,8 +13,10 @@ export const Navbar = () => {
   const { toastSuccess } = Toast();
 
   useEffect(() => {
-    const localUser = JSON.parse(localStorage.getItem("user"));
-    setUser(localUser);
+    const localUser = localStorage.getItem("user");
+    if (localUser) {
+      setUser(JSON.parse(localUser));
+    }
   }, []);
 
   function logout() {
