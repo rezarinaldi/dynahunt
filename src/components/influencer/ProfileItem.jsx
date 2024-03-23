@@ -24,18 +24,6 @@ export const ProfileItem = () => {
         untuk serial televisi Inggris The X Factor.
       </p>
       <p className="text-md lg:text-sm my-2">Bradford, Britania Raya</p>
-      <p className="text-md lg:text-sm my-2">
-        Rate : Rp 5.000.000 - 25.000.000,-
-      </p>
-      <div className="border border-[#601FCE] rounded-xl p-2 sm:max-w-[30vw] lg:max-w-[15vw] m-auto">
-        <div>
-          <p className="">Interest for Collaboration with</p>
-          <p className="text-red-500 font-bold">Zayn Malik?</p>
-        </div>
-        <button className="bg-yellow-400 px-6 py-1 rounded-lg my-2">
-          Yes!
-        </button>
-      </div>
     </div>
   );
 };
